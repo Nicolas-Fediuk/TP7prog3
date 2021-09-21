@@ -39,7 +39,7 @@
                 <tr>
                     <td class="auto-style3">&nbsp;</td>
                     <td class="auto-style2">
-                        <asp:GridView ID="GridView1" runat="server">
+                        <asp:GridView ID="grdSucuSeleccionadas" runat="server">
                         </asp:GridView>
                     </td>
                     <td>&nbsp;</td>

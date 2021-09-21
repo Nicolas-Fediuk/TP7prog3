@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,9 @@ namespace TP7_Grupo1
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            DataTable Seleccionados = (DataTable)Session["SucuSeleccionadas"];
+            grdSucuSeleccionadas.DataSource = Seleccionados;
+            grdSucuSeleccionadas.DataBind();
         }
     }
 }
