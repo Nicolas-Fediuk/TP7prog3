@@ -83,8 +83,25 @@ namespace TP7_Grupo1
                 else
                 {
                     DataTable TablaSeleccionados = (DataTable)Session["SucuSeleccionadas"];
-                    AgregarFila(TablaSeleccionados, SucuID, SucuNombre, SucuDesc);
-                    Session["SucuSeleccionadas"] = TablaSeleccionados;
+
+                    bool Existe=false;
+
+                    foreach (DataRow row in TablaSeleccionados.Rows) //Revisa cada fila de la tabla
+                    {
+                        if (SucuID == row["ID Sucursal"].ToString()) // revisa si SucuID ya existe en la tabla
+                        {
+                            Existe = true;
+                        }
+
+
+                    }
+
+                    if (Existe == false) // En el caso de que no exista, añade la seleccion a la tabla
+                    {
+                        AgregarFila(TablaSeleccionados, SucuID, SucuNombre, SucuDesc);
+                        Session["SucuSeleccionadas"] = TablaSeleccionados;
+                    }
+                   
                 }
 
 
